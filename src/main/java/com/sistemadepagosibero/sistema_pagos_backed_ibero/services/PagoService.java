@@ -1,15 +1,15 @@
 package com.sistemadepagosibero.sistema_pagos_backed_ibero.services;
 
+
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.sistemadepagosibero.sistema_pagos_backed_ibero.entities.Estudiante;
@@ -19,10 +19,8 @@ import com.sistemadepagosibero.sistema_pagos_backed_ibero.enums.TypePago;
 import com.sistemadepagosibero.sistema_pagos_backed_ibero.repository.EstudianteRepository;
 import com.sistemadepagosibero.sistema_pagos_backed_ibero.repository.PagoRepository;
 
-import jakarta.transaction.Transactional;
 
-@Service
-@Transactional // para asegurar que los metodos se ejecuten dentro de una transaccion
+
 public class PagoService {
     @Autowired
     private PagoRepository pagoRepository; // inyeccion de dependencias de pagoRepository
@@ -68,7 +66,7 @@ public class PagoService {
         String fileName = UUID.randomUUID().toString();
         // creamos la ruta completa donde se guardara el archivo
         // construimos la ruta completa del archivo la extension del archivo es pdf
-        Path filePath = Paths.get(System.getProperty("user.home"), "enset-data", "pagos", fileName + ".pdf");
+        Path filePath = Path.get(System.getProperty("user.home"), "enset-data", "pagos", fileName + ".pdf");
         // guardamos el archivo en la ruta especifica
         Files.copy(file.getInputStream(), filePath);
         // buscamos el estudiante que realiza el pago con su codigo

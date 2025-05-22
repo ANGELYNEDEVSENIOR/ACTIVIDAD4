@@ -2,6 +2,7 @@ package com.sistemadepagosibero.sistema_pagos_backed_ibero.repository;
 
 import java.util.List;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.sistemadepagosibero.sistema_pagos_backed_ibero.entities.Estudiante;

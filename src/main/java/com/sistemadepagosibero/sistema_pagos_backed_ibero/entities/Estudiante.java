@@ -1,9 +1,9 @@
 package com.sistemadepagosibero.sistema_pagos_backed_ibero.entities;
 
-import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
